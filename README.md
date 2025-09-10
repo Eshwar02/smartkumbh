@@ -30,15 +30,15 @@ SmartKumbh is a Flutter app built to make onboarding easier at large gatherings 
 
 **Features:**
 
->> The QR code is created on the device itself, so it works even without internet. The map uses OpenStreetMap tiles and includes a recenter button with a simple current location marker.
+-> The QR code is created on the device itself, so it works even without internet. The map uses OpenStreetMap tiles and includes a recenter button with a simple current location marker.
 
->> The login form includes type-ahead inputs for state and city, plus some basic validation rules. Phone number must be 10 digits, Aadhaar only asks for the last four digits, and the family members field accepts only numbers.
+-> The login form includes type-ahead inputs for state and city, plus some basic validation rules. Phone number must be 10 digits, Aadhaar only asks for the last four digits, and the family members field accepts only numbers.
 
->> Once a person logs in, their session is stored locally, so next time the app opens directly to the home screen. Logging out clears this session.
+-> Once a person logs in, their session is stored locally, so next time the app opens directly to the home screen. Logging out clears this session.
 
->> The design uses a mix of neumorphic cards and Material 3 widgets with a consistent dark theme. Page transitions have smooth fade and slide animations. The app also follows accessibility basics with large buttons, clear text, and good contrast.
+-> The design uses a mix of neumorphic cards and Material 3 widgets with a consistent dark theme. Page transitions have smooth fade and slide animations. The app also follows accessibility basics with large buttons, clear text, and good contrast.
 
->> Most of the app works offline. The map needs internet for tiles, but the rest of the interface stays usable without network.
+-> Most of the app works offline. The map needs internet for tiles, but the rest of the interface stays usable without network.
 
 **Map and attribution:**
 
