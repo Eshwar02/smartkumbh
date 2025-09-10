@@ -1,123 +1,54 @@
 **SmartKumbh**
 
-SmartKumbh is a Flutter app built to make onboarding easier at large gatherings like the Kumbh Mela. With it, people can quickly enter their details, generate a personal QR code, view their live location on a map, and raise an SOS alert if needed. The app is designed to be simple, fast, and offline-friendly.
+**Team ID: TH1952**
 
-**What the app does:**
+**1. Overview**
 
--> Quick login form without any passwords
+SmartKumbh is a mobile application designed to improve safety and convenience during large gatherings such as the Kumbh Mela. The app helps users sign in quickly without passwords, generate a personal QR code that works even offline, view their live location on a map, and raise an SOS alert in case of emergencies. It is lightweight, accessible, and user-friendly, ensuring a smooth experience for both visitors and organizers.
 
--> Generates a personal QR code directly on the device
+**2. Problem & Solution**
 
--> Shows your current location on a live map using OpenStreetMap
+_Problem Statement:_
+Events like the Kumbh Mela bring together millions of people, often leading to problems such as people getting lost, difficulty in identification, poor connectivity, and delays in emergency assistance.
 
--> SOS screen with a triple-tap confirmation flow
+_Solution:_
+SmartKumbh provides a simple yet effective solution through a mobile app. It allows quick onboarding, generates offline QR codes for identity verification, provides live location tracking using GPS, and enables an SOS alert feature for emergencies. This ensures better safety, quicker responses, and improved crowd management.
 
--> Profile screen with a logout option
+**3. Logic & Workflow**
 
--> Dark theme with smooth animations throughout
+_Data Collection:_
+Basic user information (name, phone number, Aadhaar details, family members) collected during sign-up. Location accessed with the user’s permission.
 
-**Screens included:**
+_Processing:_
+QR codes are generated directly on the device, ensuring they work without internet access. Location data is processed using GPS and OpenStreetMap. Session data is stored locally for faster access.
 
--> Splash screen
+_Output:_
+Users receive a personal QR code, real-time location on the map, and the ability to send SOS alerts.
 
--> Login screen
+_User Side:_
+Quick login, personal QR code, live location map, SOS feature, and profile management.
 
--> Home screen (QR, Info, SOS, Map)
+_Admin Side:_
+Verification of users by scanning QR codes, receiving SOS alerts, and monitoring crowd flow to support better management.
 
--> Profile screen
+**4. Tech Stack**
 
--> Full screen map
+-> Frontend: Flutter (Material Design 3 + Neumorphic UI)
 
-**Features:**
+-> Backend: Firebase or Supabase (Authentication, Database, Cloud Storage)
 
--> The QR code is created on the device itself, so it works even without internet. The map uses OpenStreetMap tiles and includes a recenter button with a simple current location marker.
+-> Database: Firestore (Firebase) or PostgreSQL (Supabase)
 
--> The login form includes type-ahead inputs for state and city, plus some basic validation rules. Phone number must be 10 digits, Aadhaar only asks for the last four digits, and the family members field accepts only numbers.
+-> Maps & Location: OpenStreetMap and Geolocator
 
--> Once a person logs in, their session is stored locally, so next time the app opens directly to the home screen. Logging out clears this session.
+-> Utilities: SharedPreferences (local storage), QR Flutter (QR code generation)
 
--> The design uses a mix of neumorphic cards and Material 3 widgets with a consistent dark theme. Page transitions have smooth fade and slide animations. The app also follows accessibility basics with large buttons, clear text, and good contrast.
+**5. Future Scope**
 
--> Most of the app works offline. The map needs internet for tiles, but the rest of the interface stays usable without network.
+Adding offline map support for areas with poor connectivity.
 
-**Map and attribution:**
+AI-based crowd monitoring and prediction for safety.
 
-The app uses tiles from OpenStreetMap. The attribution is shown in-app as “OpenStreetMap contributors.” A user agent is also set so the map servers can recognize the app.
+A dashboard for organizers to manage crowd flow and SOS alerts.
 
-**Project structure:**
-
-lib/main.dart contains all widgets, navigation, and theme for now
-
-assets/logo.png is used for the splash screen
-
-**__How to run__**
-
-1. Install Flutter and set up Android or iOS tooling.
-
-2. Clone this repository and fetch the dependencies:
-
-3. git clone https://github.com/<your-username>/smartkumbh.git
-cd smartkumbh
-flutter pub get
-
-
-**Run the app:**
-
-flutter run
-
-**Permissions:**
-
-Location access is required to show the current position on the map.
-
-**On Android, add the following to AndroidManifest.xml:**
-
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-
-
-**On iOS, add this to Info.plist:**
-
-<key>NSLocationWhenInUseUsageDescription</key>
-<string>We use your location to show your position on the map.</string>
-
-**Common issues:**
-
-If map tiles are not loading, check the internet connection. Emulators sometimes block map traffic.
-
-If your location does not appear, make sure to allow location permission and enable location services on the device.
-
-If the app opens directly to the home screen after reinstall, clear app data or log out to reset the session.
-
-**Build commands**
-
-To analyze and format the project:
-
-flutter analyze
-dart format .
-
-
-**To build a release version for Android:**
-
-flutter build apk --release
-
-
-**To build for iOS (on macOS):**
-
-flutter build ios --release
-
-**Roadmap**
-
-**>>**More map layers and points of interest for event zones
-
-**>>** Offline map tile caching
-
-**>>** QR scanner for checkpoints
-
-**>>** Unit and widget testing
-
-
-**Credits**
-
-OpenStreetMap contributors
-
-Flutter community and package authors: flutter_map, geolocator, qr_flutter, shared_preferences
+Scaling the app for other large events such as concerts, fairs, and religious gatherings.
