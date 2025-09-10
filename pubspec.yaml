@@ -1,0 +1,45 @@
+name: smartkumbh
+description: "SmartKumbh Flutter App with Firebase, Maps, and QR features"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Firebase
+  supabase_flutter: ^2.10.0
+
+  # Location & Maps
+  google_maps_flutter: ^2.10.0
+  geolocator: ^14.0.2
+  flutter_map: ^8.2.1
+  latlong2: ^0.9.1
+
+  # Utilities
+  qr_flutter: ^4.1.0
+  shared_preferences: ^2.3.2
+  google_fonts: ^6.3.1
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/logo.png
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logo.png"   # path to your logo
+  min_sdk_android: 21             # for adaptive icons
