@@ -1,147 +1,132 @@
 SmartKumbh
-SmartKumbh is a Flutter app for quick onboarding at large gatherings. It lets people fill basic details, generate a personal QR, see their location on a map, and trigger an SOS flow—fast and simple.
 
-What you get
-Fast sign‑in form (no password)
+SmartKumbh is a Flutter app built to make onboarding easier at large gatherings like the Kumbh Mela. With it, people can quickly enter their details, generate a personal QR code, view their live location on a map, and raise an SOS alert if needed. The app is designed to be simple, fast, and offline-friendly.
 
-Personal QR code generated on the device
+What the app does
 
-Live map with current location (OpenStreetMap tiles)
+Quick login form without any passwords
 
-SOS screen with triple‑tap confirmation
+Generates a personal QR code directly on the device
 
-Profile and info screens
+Shows your current location on a live map using OpenStreetMap
 
-Clean dark theme with smooth animations
+SOS screen with a triple-tap confirmation flow
 
-Screens
-Splash
+Profile screen with a logout option
 
-Login
+Dark theme with smooth animations throughout
 
-Home (QR, Info, SOS, Map)
+Screens included
 
-Profile (with logout)
+Splash screen
 
-Full‑screen Map
+Login screen
 
-Features (frontend only)
-On‑device QR: The QR image is rendered locally, so the QR page works even without internet.
+Home screen (QR, Info, SOS, Map)
 
-Location map: Map uses OpenStreetMap via flutter_map with a recenter button and a simple current‑location marker.
+Profile screen
 
-Autocomplete inputs: State and City fields include type‑ahead pickers for quick selection.
+Full screen map
 
-Validation:
+Features
 
-Phone must be exactly 10 digits
+The QR code is created on the device itself, so it works even without internet. The map uses OpenStreetMap tiles and includes a recenter button with a simple current location marker.
 
-Aadhaar requires last 4 digits
+The login form includes type-ahead inputs for state and city, plus some basic validation rules. Phone number must be 10 digits, Aadhaar only asks for the last four digits, and the family members field accepts only numbers.
 
-Family members field accepts only numbers
+Once a person logs in, their session is stored locally, so next time the app opens directly to the home screen. Logging out clears this session.
 
-Local session cache: After first login, the app opens straight to the main shell; logout clears the session.
+The design uses a mix of neumorphic cards and Material 3 widgets with a consistent dark theme. Page transitions have smooth fade and slide animations. The app also follows accessibility basics with large buttons, clear text, and good contrast.
 
-Neumorphic cards + Material 3: Soft UI components, rounded surfaces, and a consistent dark palette.
-
-Smooth transitions: Custom fade + slide route animations for page changes and a subtle splash fade.
-
-Accessibility basics: Large tap targets, clear labels, and good contrast in dark mode.
-
-Offline‑friendly UX: Most UI works offline; the map needs network for tiles, but the app stays responsive.
-
-Lightweight deps:
-
-flutter_map + latlong2 (maps)
-
-geolocator (location)
-
-qr_flutter (QR rendering)
-
-shared_preferences (local cache)
+Most of the app works offline. The map needs internet for tiles, but the rest of the interface stays usable without network.
 
 Map and attribution
-This app uses OpenStreetMap tiles. Please keep attribution visible if you change the UI.
 
-Tiles: https://tile.openstreetmap.org/{z}/{x}/{y}.png
+The app uses tiles from OpenStreetMap. The attribution is shown in-app as “OpenStreetMap contributors.” A user agent is also set so the map servers can recognize the app.
 
-Attribution shown in‑app: “OpenStreetMap contributors”
+Project structure
 
-A user‑agent string is set in the tile layer so map servers can identify the app.
+lib/main.dart contains all widgets, navigation, and theme for now
 
-Project structure (short)
-lib/main.dart — all widgets, services, navigation, and theme live here for now
+assets/logo.png is used for the splash screen
 
-assets/logo.png — app logo for the splash
+How to run
 
-Setup
-Install Flutter and set up Android/iOS tooling.
+Install Flutter and set up Android or iOS tooling.
 
-Clone the repo and fetch packages:
+Clone this repository and fetch the dependencies:
 
-bash
 git clone https://github.com/<your-username>/smartkumbh.git
 cd smartkumbh
 flutter pub get
-Run:
 
-bash
+
+Run the app:
+
 flutter run
+
 Permissions
-Location access is required to show “My Location” on the map.
 
-Android (AndroidManifest.xml):
+Location access is required to show the current position on the map.
 
-xml
+On Android, add the following to AndroidManifest.xml:
+
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-iOS (Info.plist):
 
-xml
+
+On iOS, add this to Info.plist:
+
 <key>NSLocationWhenInUseUsageDescription</key>
 <string>We use your location to show your position on the map.</string>
-Troubleshooting
-Map tiles don’t appear
 
-Check network connectivity and try again. Emulators sometimes block traffic or have DNS hiccups.
+Common issues
 
-“My Location” not shown
+If map tiles are not loading, check the internet connection. Emulators sometimes block map traffic.
 
-Accept the permission prompt and ensure location services are enabled on the device/emulator.
+If your location does not appear, make sure to allow location permission and enable location services on the device.
 
-App opens straight to Home after reinstall
-
-Clear app data or use the Logout button to reset the local session cache.
+If the app opens directly to the home screen after reinstall, clear app data or log out to reset the session.
 
 Build commands
-bash
-# Analyze and format
+
+To analyze and format the project:
+
 flutter analyze
 dart format .
 
-# Android release (APK)
+
+To build a release version for Android:
+
 flutter build apk --release
 
-# iOS release (from macOS)
+
+To build for iOS (on macOS):
+
 flutter build ios --release
+
 Roadmap
-Multi‑language UI copy
 
-Map layers and POIs for event zones
+Support for multiple languages
 
-Better offline behavior (map tile caching)
+More map layers and points of interest for event zones
 
-QR scanner view for checkpoints
+Offline map tile caching
 
-Unit and widget tests
+QR scanner for checkpoints
+
+Unit and widget testing
 
 Contributing
-Issues and PRs are welcome. Please keep PRs small and focused. If you change UI behavior, include a short screen recording or screenshots.
+
+Issues and pull requests are welcome. Keep them focused and clear. If you change the UI, include screenshots or a short recording.
 
 License
-Add your preferred license (e.g., MIT) in a LICENSE file at the repo root.
+
+Add your preferred license in the LICENSE file (for example MIT).
 
 Credits
+
 OpenStreetMap contributors
 
-Flutter community and package authors (flutter_map, geolocator, qr_flutter, shared_preferences)
+Flutter community and package authors: flutter_map, geolocator, qr_flutter, shared_preferences
