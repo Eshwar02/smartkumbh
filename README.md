@@ -45,10 +45,10 @@ Verification of users by scanning QR codes, receiving SOS alerts, and monitoring
 
 **5. Future Scope**
 
-Adding offline map support for areas with poor connectivity.
+-> Adding offline map support for areas with poor connectivity.
 
-AI-based crowd monitoring and prediction for safety.
+-> AI-based crowd monitoring and prediction for safety.
 
-A dashboard for organizers to manage crowd flow and SOS alerts.
+-> A dashboard for organizers to manage crowd flow and SOS alerts.
 
-Scaling the app for other large events such as concerts, fairs, and religious gatherings.
+-> Scaling the app for other large events such as concerts, fairs, and religious gatherings.
